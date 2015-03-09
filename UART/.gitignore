@@ -1,4 +1,5 @@
 *.cywrk*
+!*.cywrk
 *.cydsn/*
 !*.cydsn/device.h
 !*.cydsn/main.c
