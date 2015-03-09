@@ -1,0 +1,1098 @@
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"IDAC_1.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	IDAC_1_initVar
+  18              		.bss
+  19              		.align	2
+  20              		.type	IDAC_1_initVar, %object
+  21              		.size	IDAC_1_initVar, 4
+  22              	IDAC_1_initVar:
+  23 0000 00000000 		.space	4
+  24              		.section	.text.IDAC_1_Init,"ax",%progbits
+  25              		.align	2
+  26              		.global	IDAC_1_Init
+  27              		.code	16
+  28              		.thumb_func
+  29              		.type	IDAC_1_Init, %function
+  30              	IDAC_1_Init:
+  31              	.LFB0:
+  32              		.file 1 ".\\Generated_Source\\PSoC4\\IDAC_1.c"
+   1:.\Generated_Source\PSoC4/IDAC_1.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/IDAC_1.c **** * File Name: IDAC_1.c
+   3:.\Generated_Source\PSoC4/IDAC_1.c **** * Version 1.0
+   4:.\Generated_Source\PSoC4/IDAC_1.c **** *
+   5:.\Generated_Source\PSoC4/IDAC_1.c **** * Description:
+   6:.\Generated_Source\PSoC4/IDAC_1.c **** *  This file provides the source code of APIs for the IDAC_P4 component.
+   7:.\Generated_Source\PSoC4/IDAC_1.c **** *
+   8:.\Generated_Source\PSoC4/IDAC_1.c **** *******************************************************************************
+   9:.\Generated_Source\PSoC4/IDAC_1.c **** * Copyright 2013, Cypress Semiconductor Corporation.  All rights reserved.
+  10:.\Generated_Source\PSoC4/IDAC_1.c **** * You may use this file only in accordance with the license, terms, conditions,
+  11:.\Generated_Source\PSoC4/IDAC_1.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  12:.\Generated_Source\PSoC4/IDAC_1.c **** * the software package with which this file was provided.
+  13:.\Generated_Source\PSoC4/IDAC_1.c **** *******************************************************************************/
+  14:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  15:.\Generated_Source\PSoC4/IDAC_1.c **** #include "IDAC_1.h"
+  16:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  17:.\Generated_Source\PSoC4/IDAC_1.c **** uint32 IDAC_1_initVar = 0u;
+  18:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  19:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  20:.\Generated_Source\PSoC4/IDAC_1.c **** /*******************************************************************************
+  21:.\Generated_Source\PSoC4/IDAC_1.c **** * Function Name: IDAC_1_Init
+  22:.\Generated_Source\PSoC4/IDAC_1.c **** ********************************************************************************
+  23:.\Generated_Source\PSoC4/IDAC_1.c **** *
+  24:.\Generated_Source\PSoC4/IDAC_1.c **** * Summary:
+  25:.\Generated_Source\PSoC4/IDAC_1.c **** *  Initializes IDAC registers with initial values provided from customizer.
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 2
+
+
+  26:.\Generated_Source\PSoC4/IDAC_1.c **** *
+  27:.\Generated_Source\PSoC4/IDAC_1.c **** * Parameters:
+  28:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+  29:.\Generated_Source\PSoC4/IDAC_1.c **** *
+  30:.\Generated_Source\PSoC4/IDAC_1.c **** * Return:
+  31:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+  32:.\Generated_Source\PSoC4/IDAC_1.c **** *
+  33:.\Generated_Source\PSoC4/IDAC_1.c **** * Global variables:
+  34:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+  35:.\Generated_Source\PSoC4/IDAC_1.c **** *
+  36:.\Generated_Source\PSoC4/IDAC_1.c **** *******************************************************************************/
+  37:.\Generated_Source\PSoC4/IDAC_1.c **** void IDAC_1_Init(void)
+  38:.\Generated_Source\PSoC4/IDAC_1.c **** {
+  33              		.loc 1 38 0
+  34              		.cfi_startproc
+  35 0000 90B5     		push	{r4, r7, lr}
+  36              		.cfi_def_cfa_offset 12
+  37              		.cfi_offset 4, -12
+  38              		.cfi_offset 7, -8
+  39              		.cfi_offset 14, -4
+  40 0002 83B0     		sub	sp, sp, #12
+  41              		.cfi_def_cfa_offset 24
+  42 0004 00AF     		add	r7, sp, #0
+  43              		.cfi_def_cfa_register 7
+  39:.\Generated_Source\PSoC4/IDAC_1.c ****     uint8 enableInterrupts;
+  40:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  41:.\Generated_Source\PSoC4/IDAC_1.c ****     /* Set initial configuration */
+  42:.\Generated_Source\PSoC4/IDAC_1.c ****     enableInterrupts = CyEnterCriticalSection();
+  44              		.loc 1 42 0
+  45 0006 FC1D     		add	r4, r7, #7
+  46 0008 FFF7FEFF 		bl	CyEnterCriticalSection
+  47 000c 031C     		mov	r3, r0
+  48 000e 2370     		strb	r3, [r4]
+  43:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  44:.\Generated_Source\PSoC4/IDAC_1.c ****     /* clear previous values */
+  45:.\Generated_Source\PSoC4/IDAC_1.c ****     IDAC_1_IDAC_CONTROL_REG &= ((uint32)~((uint32)IDAC_1_IDAC_VALUE_MASK <<
+  49              		.loc 1 45 0
+  50 0010 0E4B     		ldr	r3, .L2
+  51 0012 0E4A     		ldr	r2, .L2
+  52 0014 1268     		ldr	r2, [r2]
+  53 0016 1A60     		str	r2, [r3]
+  46:.\Generated_Source\PSoC4/IDAC_1.c ****         IDAC_1_IDAC_VALUE_POSITION)) | ((uint32)~((uint32)IDAC_1_IDAC_MODE_MASK <<
+  47:.\Generated_Source\PSoC4/IDAC_1.c ****         IDAC_1_IDAC_MODE_POSITION))  | ((uint32)~((uint32)IDAC_1_IDAC_RANGE_MASK  <<
+  48:.\Generated_Source\PSoC4/IDAC_1.c ****         IDAC_1_IDAC_RANGE_POSITION));
+  49:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  50:.\Generated_Source\PSoC4/IDAC_1.c ****     IDAC_1_IDAC_POLARITY_CONTROL_REG &= (~(uint32)((uint32)IDAC_1_IDAC_POLARITY_MASK <<
+  54              		.loc 1 50 0
+  55 0018 0D4B     		ldr	r3, .L2+4
+  56 001a 0D4A     		ldr	r2, .L2+4
+  57 001c 1168     		ldr	r1, [r2]
+  58 001e 0D4A     		ldr	r2, .L2+8
+  59 0020 0A40     		and	r2, r1
+  60 0022 1A60     		str	r2, [r3]
+  51:.\Generated_Source\PSoC4/IDAC_1.c ****         IDAC_1_IDAC_POLARITY_POSITION));
+  52:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  53:.\Generated_Source\PSoC4/IDAC_1.c ****     /* set new configuration */
+  54:.\Generated_Source\PSoC4/IDAC_1.c ****     IDAC_1_IDAC_CONTROL_REG |= (((uint32)IDAC_1_IDAC_INIT_VALUE <<
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 3
+
+
+  61              		.loc 1 54 0
+  62 0024 094B     		ldr	r3, .L2
+  63 0026 094A     		ldr	r2, .L2
+  64 0028 1268     		ldr	r2, [r2]
+  65 002a 8F21     		mov	r1, #143
+  66 002c C900     		lsl	r1, r1, #3
+  67 002e 0A43     		orr	r2, r1
+  68 0030 1A60     		str	r2, [r3]
+  55:.\Generated_Source\PSoC4/IDAC_1.c ****         IDAC_1_IDAC_VALUE_POSITION) | ((uint32)IDAC_1_IDAC_RANGE <<
+  56:.\Generated_Source\PSoC4/IDAC_1.c ****         IDAC_1_IDAC_RANGE_POSITION));
+  57:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  58:.\Generated_Source\PSoC4/IDAC_1.c ****     IDAC_1_IDAC_POLARITY_CONTROL_REG |= ((uint32)IDAC_1_IDAC_POLARITY <<
+  69              		.loc 1 58 0
+  70 0032 074B     		ldr	r3, .L2+4
+  71 0034 064A     		ldr	r2, .L2+4
+  72 0036 1268     		ldr	r2, [r2]
+  73 0038 1A60     		str	r2, [r3]
+  59:.\Generated_Source\PSoC4/IDAC_1.c ****                                                            IDAC_1_IDAC_POLARITY_POSITION);
+  60:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  61:.\Generated_Source\PSoC4/IDAC_1.c ****     CyExitCriticalSection(enableInterrupts);
+  74              		.loc 1 61 0
+  75 003a FB1D     		add	r3, r7, #7
+  76 003c 1B78     		ldrb	r3, [r3]
+  77 003e 181C     		mov	r0, r3
+  78 0040 FFF7FEFF 		bl	CyExitCriticalSection
+  62:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  63:.\Generated_Source\PSoC4/IDAC_1.c **** }
+  79              		.loc 1 63 0
+  80 0044 BD46     		mov	sp, r7
+  81 0046 03B0     		add	sp, sp, #12
+  82              		@ sp needed
+  83 0048 90BD     		pop	{r4, r7, pc}
+  84              	.L3:
+  85 004a C046     		.align	2
+  86              	.L2:
+  87 004c 08000840 		.word	1074266120
+  88 0050 04000840 		.word	1074266116
+  89 0054 FFFFFEFF 		.word	-65537
+  90              		.cfi_endproc
+  91              	.LFE0:
+  92              		.size	IDAC_1_Init, .-IDAC_1_Init
+  93              		.section	.text.IDAC_1_Enable,"ax",%progbits
+  94              		.align	2
+  95              		.global	IDAC_1_Enable
+  96              		.code	16
+  97              		.thumb_func
+  98              		.type	IDAC_1_Enable, %function
+  99              	IDAC_1_Enable:
+ 100              	.LFB1:
+  64:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  65:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  66:.\Generated_Source\PSoC4/IDAC_1.c **** /*******************************************************************************
+  67:.\Generated_Source\PSoC4/IDAC_1.c **** * Function Name: IDAC_1_Enable
+  68:.\Generated_Source\PSoC4/IDAC_1.c **** ********************************************************************************
+  69:.\Generated_Source\PSoC4/IDAC_1.c **** *
+  70:.\Generated_Source\PSoC4/IDAC_1.c **** * Summary:
+  71:.\Generated_Source\PSoC4/IDAC_1.c **** *  Enables IDAC operations.
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 4
+
+
+  72:.\Generated_Source\PSoC4/IDAC_1.c **** *
+  73:.\Generated_Source\PSoC4/IDAC_1.c **** * Parameters:
+  74:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+  75:.\Generated_Source\PSoC4/IDAC_1.c **** *
+  76:.\Generated_Source\PSoC4/IDAC_1.c **** * Return:
+  77:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+  78:.\Generated_Source\PSoC4/IDAC_1.c **** *
+  79:.\Generated_Source\PSoC4/IDAC_1.c **** * Global variables:
+  80:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+  81:.\Generated_Source\PSoC4/IDAC_1.c **** *
+  82:.\Generated_Source\PSoC4/IDAC_1.c **** *******************************************************************************/
+  83:.\Generated_Source\PSoC4/IDAC_1.c **** void IDAC_1_Enable(void)
+  84:.\Generated_Source\PSoC4/IDAC_1.c **** {
+ 101              		.loc 1 84 0
+ 102              		.cfi_startproc
+ 103 0000 90B5     		push	{r4, r7, lr}
+ 104              		.cfi_def_cfa_offset 12
+ 105              		.cfi_offset 4, -12
+ 106              		.cfi_offset 7, -8
+ 107              		.cfi_offset 14, -4
+ 108 0002 83B0     		sub	sp, sp, #12
+ 109              		.cfi_def_cfa_offset 24
+ 110 0004 00AF     		add	r7, sp, #0
+ 111              		.cfi_def_cfa_register 7
+  85:.\Generated_Source\PSoC4/IDAC_1.c ****     uint8 enableInterrupts;
+  86:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  87:.\Generated_Source\PSoC4/IDAC_1.c ****     enableInterrupts = CyEnterCriticalSection();
+ 112              		.loc 1 87 0
+ 113 0006 FC1D     		add	r4, r7, #7
+ 114 0008 FFF7FEFF 		bl	CyEnterCriticalSection
+ 115 000c 031C     		mov	r3, r0
+ 116 000e 2370     		strb	r3, [r4]
+  88:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  89:.\Generated_Source\PSoC4/IDAC_1.c ****     /* Enable the IDAC */
+  90:.\Generated_Source\PSoC4/IDAC_1.c ****     IDAC_1_IDAC_CONTROL_REG |= ((uint32)IDAC_1_IDAC_EN_MODE <<
+ 117              		.loc 1 90 0
+ 118 0010 0A4B     		ldr	r3, .L5
+ 119 0012 0A4A     		ldr	r2, .L5
+ 120 0014 1268     		ldr	r2, [r2]
+ 121 0016 C021     		mov	r1, #192
+ 122 0018 8900     		lsl	r1, r1, #2
+ 123 001a 0A43     		orr	r2, r1
+ 124 001c 1A60     		str	r2, [r3]
+  91:.\Generated_Source\PSoC4/IDAC_1.c ****                                                   IDAC_1_IDAC_MODE_POSITION);
+  92:.\Generated_Source\PSoC4/IDAC_1.c ****     IDAC_1_IDAC_POLARITY_CONTROL_REG |= ((uint32)IDAC_1_IDAC_CSD_EN <<
+ 125              		.loc 1 92 0
+ 126 001e 084B     		ldr	r3, .L5+4
+ 127 0020 074A     		ldr	r2, .L5+4
+ 128 0022 1268     		ldr	r2, [r2]
+ 129 0024 8021     		mov	r1, #128
+ 130 0026 0906     		lsl	r1, r1, #24
+ 131 0028 0A43     		orr	r2, r1
+ 132 002a 1A60     		str	r2, [r3]
+  93:.\Generated_Source\PSoC4/IDAC_1.c ****                                                            IDAC_1_IDAC_CSD_EN_POSITION);
+  94:.\Generated_Source\PSoC4/IDAC_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 133              		.loc 1 94 0
+ 134 002c FB1D     		add	r3, r7, #7
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 5
+
+
+ 135 002e 1B78     		ldrb	r3, [r3]
+ 136 0030 181C     		mov	r0, r3
+ 137 0032 FFF7FEFF 		bl	CyExitCriticalSection
+  95:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  96:.\Generated_Source\PSoC4/IDAC_1.c **** }
+ 138              		.loc 1 96 0
+ 139 0036 BD46     		mov	sp, r7
+ 140 0038 03B0     		add	sp, sp, #12
+ 141              		@ sp needed
+ 142 003a 90BD     		pop	{r4, r7, pc}
+ 143              	.L6:
+ 144              		.align	2
+ 145              	.L5:
+ 146 003c 08000840 		.word	1074266120
+ 147 0040 04000840 		.word	1074266116
+ 148              		.cfi_endproc
+ 149              	.LFE1:
+ 150              		.size	IDAC_1_Enable, .-IDAC_1_Enable
+ 151              		.section	.text.IDAC_1_Start,"ax",%progbits
+ 152              		.align	2
+ 153              		.global	IDAC_1_Start
+ 154              		.code	16
+ 155              		.thumb_func
+ 156              		.type	IDAC_1_Start, %function
+ 157              	IDAC_1_Start:
+ 158              	.LFB2:
+  97:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  98:.\Generated_Source\PSoC4/IDAC_1.c **** 
+  99:.\Generated_Source\PSoC4/IDAC_1.c **** /*******************************************************************************
+ 100:.\Generated_Source\PSoC4/IDAC_1.c **** * Function Name: IDAC_1_Start
+ 101:.\Generated_Source\PSoC4/IDAC_1.c **** ********************************************************************************
+ 102:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 103:.\Generated_Source\PSoC4/IDAC_1.c **** * Summary:
+ 104:.\Generated_Source\PSoC4/IDAC_1.c **** *  Starts the IDAC hardware.
+ 105:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 106:.\Generated_Source\PSoC4/IDAC_1.c **** * Parameters:
+ 107:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+ 108:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 109:.\Generated_Source\PSoC4/IDAC_1.c **** * Return:
+ 110:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+ 111:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 112:.\Generated_Source\PSoC4/IDAC_1.c **** * Global variables:
+ 113:.\Generated_Source\PSoC4/IDAC_1.c **** *  IDAC_1_initVar
+ 114:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 115:.\Generated_Source\PSoC4/IDAC_1.c **** *******************************************************************************/
+ 116:.\Generated_Source\PSoC4/IDAC_1.c **** void IDAC_1_Start(void)
+ 117:.\Generated_Source\PSoC4/IDAC_1.c **** {
+ 159              		.loc 1 117 0
+ 160              		.cfi_startproc
+ 161 0000 80B5     		push	{r7, lr}
+ 162              		.cfi_def_cfa_offset 8
+ 163              		.cfi_offset 7, -8
+ 164              		.cfi_offset 14, -4
+ 165 0002 00AF     		add	r7, sp, #0
+ 166              		.cfi_def_cfa_register 7
+ 118:.\Generated_Source\PSoC4/IDAC_1.c ****     if(0u == IDAC_1_initVar)
+ 167              		.loc 1 118 0
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 6
+
+
+ 168 0004 064B     		ldr	r3, .L9
+ 169 0006 1B68     		ldr	r3, [r3]
+ 170 0008 002B     		cmp	r3, #0
+ 171 000a 04D1     		bne	.L8
+ 119:.\Generated_Source\PSoC4/IDAC_1.c ****     {
+ 120:.\Generated_Source\PSoC4/IDAC_1.c ****         IDAC_1_Init();
+ 172              		.loc 1 120 0
+ 173 000c FFF7FEFF 		bl	IDAC_1_Init
+ 121:.\Generated_Source\PSoC4/IDAC_1.c ****         IDAC_1_initVar = 1u;
+ 174              		.loc 1 121 0
+ 175 0010 034B     		ldr	r3, .L9
+ 176 0012 0122     		mov	r2, #1
+ 177 0014 1A60     		str	r2, [r3]
+ 178              	.L8:
+ 122:.\Generated_Source\PSoC4/IDAC_1.c ****     }
+ 123:.\Generated_Source\PSoC4/IDAC_1.c **** 
+ 124:.\Generated_Source\PSoC4/IDAC_1.c ****     IDAC_1_Enable();
+ 179              		.loc 1 124 0
+ 180 0016 FFF7FEFF 		bl	IDAC_1_Enable
+ 125:.\Generated_Source\PSoC4/IDAC_1.c **** 
+ 126:.\Generated_Source\PSoC4/IDAC_1.c **** }
+ 181              		.loc 1 126 0
+ 182 001a BD46     		mov	sp, r7
+ 183              		@ sp needed
+ 184 001c 80BD     		pop	{r7, pc}
+ 185              	.L10:
+ 186 001e C046     		.align	2
+ 187              	.L9:
+ 188 0020 00000000 		.word	IDAC_1_initVar
+ 189              		.cfi_endproc
+ 190              	.LFE2:
+ 191              		.size	IDAC_1_Start, .-IDAC_1_Start
+ 192              		.section	.text.IDAC_1_Stop,"ax",%progbits
+ 193              		.align	2
+ 194              		.global	IDAC_1_Stop
+ 195              		.code	16
+ 196              		.thumb_func
+ 197              		.type	IDAC_1_Stop, %function
+ 198              	IDAC_1_Stop:
+ 199              	.LFB3:
+ 127:.\Generated_Source\PSoC4/IDAC_1.c **** 
+ 128:.\Generated_Source\PSoC4/IDAC_1.c **** 
+ 129:.\Generated_Source\PSoC4/IDAC_1.c **** /*******************************************************************************
+ 130:.\Generated_Source\PSoC4/IDAC_1.c **** * Function Name: IDAC_1_Stop
+ 131:.\Generated_Source\PSoC4/IDAC_1.c **** ********************************************************************************
+ 132:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 133:.\Generated_Source\PSoC4/IDAC_1.c **** * Summary:
+ 134:.\Generated_Source\PSoC4/IDAC_1.c **** *  Stops the IDAC hardware.
+ 135:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 136:.\Generated_Source\PSoC4/IDAC_1.c **** * Parameters:
+ 137:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+ 138:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 139:.\Generated_Source\PSoC4/IDAC_1.c **** * Return:
+ 140:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+ 141:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 142:.\Generated_Source\PSoC4/IDAC_1.c **** * Global variables:
+ 143:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 7
+
+
+ 144:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 145:.\Generated_Source\PSoC4/IDAC_1.c **** *******************************************************************************/
+ 146:.\Generated_Source\PSoC4/IDAC_1.c **** void IDAC_1_Stop(void)
+ 147:.\Generated_Source\PSoC4/IDAC_1.c **** {
+ 200              		.loc 1 147 0
+ 201              		.cfi_startproc
+ 202 0000 90B5     		push	{r4, r7, lr}
+ 203              		.cfi_def_cfa_offset 12
+ 204              		.cfi_offset 4, -12
+ 205              		.cfi_offset 7, -8
+ 206              		.cfi_offset 14, -4
+ 207 0002 83B0     		sub	sp, sp, #12
+ 208              		.cfi_def_cfa_offset 24
+ 209 0004 00AF     		add	r7, sp, #0
+ 210              		.cfi_def_cfa_register 7
+ 148:.\Generated_Source\PSoC4/IDAC_1.c ****     uint8 enableInterrupts;
+ 149:.\Generated_Source\PSoC4/IDAC_1.c **** 
+ 150:.\Generated_Source\PSoC4/IDAC_1.c ****     enableInterrupts = CyEnterCriticalSection();
+ 211              		.loc 1 150 0
+ 212 0006 FC1D     		add	r4, r7, #7
+ 213 0008 FFF7FEFF 		bl	CyEnterCriticalSection
+ 214 000c 031C     		mov	r3, r0
+ 215 000e 2370     		strb	r3, [r4]
+ 151:.\Generated_Source\PSoC4/IDAC_1.c **** 
+ 152:.\Generated_Source\PSoC4/IDAC_1.c ****     /* Disable the IDAC */
+ 153:.\Generated_Source\PSoC4/IDAC_1.c ****     IDAC_1_IDAC_CONTROL_REG &= ((uint32)~((uint32)IDAC_1_IDAC_MODE_MASK <<
+ 216              		.loc 1 153 0
+ 217 0010 064B     		ldr	r3, .L12
+ 218 0012 064A     		ldr	r2, .L12
+ 219 0014 1168     		ldr	r1, [r2]
+ 220 0016 064A     		ldr	r2, .L12+4
+ 221 0018 0A40     		and	r2, r1
+ 222 001a 1A60     		str	r2, [r3]
+ 154:.\Generated_Source\PSoC4/IDAC_1.c ****         IDAC_1_IDAC_MODE_POSITION));
+ 155:.\Generated_Source\PSoC4/IDAC_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 223              		.loc 1 155 0
+ 224 001c FB1D     		add	r3, r7, #7
+ 225 001e 1B78     		ldrb	r3, [r3]
+ 226 0020 181C     		mov	r0, r3
+ 227 0022 FFF7FEFF 		bl	CyExitCriticalSection
+ 156:.\Generated_Source\PSoC4/IDAC_1.c **** }
+ 228              		.loc 1 156 0
+ 229 0026 BD46     		mov	sp, r7
+ 230 0028 03B0     		add	sp, sp, #12
+ 231              		@ sp needed
+ 232 002a 90BD     		pop	{r4, r7, pc}
+ 233              	.L13:
+ 234              		.align	2
+ 235              	.L12:
+ 236 002c 08000840 		.word	1074266120
+ 237 0030 FFFCFFFF 		.word	-769
+ 238              		.cfi_endproc
+ 239              	.LFE3:
+ 240              		.size	IDAC_1_Stop, .-IDAC_1_Stop
+ 241              		.section	.text.IDAC_1_SetValue,"ax",%progbits
+ 242              		.align	2
+ 243              		.global	IDAC_1_SetValue
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 8
+
+
+ 244              		.code	16
+ 245              		.thumb_func
+ 246              		.type	IDAC_1_SetValue, %function
+ 247              	IDAC_1_SetValue:
+ 248              	.LFB4:
+ 157:.\Generated_Source\PSoC4/IDAC_1.c **** 
+ 158:.\Generated_Source\PSoC4/IDAC_1.c **** 
+ 159:.\Generated_Source\PSoC4/IDAC_1.c **** /*******************************************************************************
+ 160:.\Generated_Source\PSoC4/IDAC_1.c **** * Function Name: IDAC_1_SetValue
+ 161:.\Generated_Source\PSoC4/IDAC_1.c **** ********************************************************************************
+ 162:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 163:.\Generated_Source\PSoC4/IDAC_1.c **** * Summary:
+ 164:.\Generated_Source\PSoC4/IDAC_1.c **** *  Sets the IDAC value.
+ 165:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 166:.\Generated_Source\PSoC4/IDAC_1.c **** * Parameters:
+ 167:.\Generated_Source\PSoC4/IDAC_1.c **** *  uint32 value
+ 168:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 169:.\Generated_Source\PSoC4/IDAC_1.c **** * Return:
+ 170:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+ 171:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 172:.\Generated_Source\PSoC4/IDAC_1.c **** * Global variables:
+ 173:.\Generated_Source\PSoC4/IDAC_1.c **** *  None
+ 174:.\Generated_Source\PSoC4/IDAC_1.c **** *
+ 175:.\Generated_Source\PSoC4/IDAC_1.c **** *******************************************************************************/
+ 176:.\Generated_Source\PSoC4/IDAC_1.c **** void IDAC_1_SetValue(uint32 value)
+ 177:.\Generated_Source\PSoC4/IDAC_1.c **** {
+ 249              		.loc 1 177 0
+ 250              		.cfi_startproc
+ 251 0000 90B5     		push	{r4, r7, lr}
+ 252              		.cfi_def_cfa_offset 12
+ 253              		.cfi_offset 4, -12
+ 254              		.cfi_offset 7, -8
+ 255              		.cfi_offset 14, -4
+ 256 0002 85B0     		sub	sp, sp, #20
+ 257              		.cfi_def_cfa_offset 32
+ 258 0004 00AF     		add	r7, sp, #0
+ 259              		.cfi_def_cfa_register 7
+ 260 0006 7860     		str	r0, [r7, #4]
+ 178:.\Generated_Source\PSoC4/IDAC_1.c ****     uint8 enableInterrupts;
+ 179:.\Generated_Source\PSoC4/IDAC_1.c ****     uint32 newRegisterValue;
+ 180:.\Generated_Source\PSoC4/IDAC_1.c **** 
+ 181:.\Generated_Source\PSoC4/IDAC_1.c ****     enableInterrupts = CyEnterCriticalSection();
+ 261              		.loc 1 181 0
+ 262 0008 3C1C     		mov	r4, r7
+ 263 000a 0F34     		add	r4, r4, #15
+ 264 000c FFF7FEFF 		bl	CyEnterCriticalSection
+ 265 0010 031C     		mov	r3, r0
+ 266 0012 2370     		strb	r3, [r4]
+ 182:.\Generated_Source\PSoC4/IDAC_1.c **** 
+ 183:.\Generated_Source\PSoC4/IDAC_1.c ****     #if(IDAC_1_IDAC_VALUE_POSITION != 0u)
+ 184:.\Generated_Source\PSoC4/IDAC_1.c ****         newRegisterValue = ((IDAC_1_IDAC_CONTROL_REG & (~(uint32)((uint32)IDAC_1_IDAC_VALUE_MASK <<
+ 185:.\Generated_Source\PSoC4/IDAC_1.c ****         IDAC_1_IDAC_VALUE_POSITION))) | (value << IDAC_1_IDAC_VALUE_POSITION));
+ 186:.\Generated_Source\PSoC4/IDAC_1.c ****     #else
+ 187:.\Generated_Source\PSoC4/IDAC_1.c ****         newRegisterValue = ((IDAC_1_IDAC_CONTROL_REG & (~(uint32)IDAC_1_IDAC_VALUE_MASK)) | value);
+ 267              		.loc 1 187 0
+ 268 0014 0A4B     		ldr	r3, .L15
+ 269 0016 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 9
+
+
+ 270 0018 FF22     		mov	r2, #255
+ 271 001a 191C     		mov	r1, r3
+ 272 001c 9143     		bic	r1, r2
+ 273 001e 0A1C     		mov	r2, r1
+ 274 0020 7B68     		ldr	r3, [r7, #4]
+ 275 0022 1343     		orr	r3, r2
+ 276 0024 BB60     		str	r3, [r7, #8]
+ 188:.\Generated_Source\PSoC4/IDAC_1.c ****     #endif /* IDAC_1_IDAC_VALUE_POSITION != 0u */
+ 189:.\Generated_Source\PSoC4/IDAC_1.c **** 
+ 190:.\Generated_Source\PSoC4/IDAC_1.c ****     IDAC_1_IDAC_CONTROL_REG = newRegisterValue;
+ 277              		.loc 1 190 0
+ 278 0026 064B     		ldr	r3, .L15
+ 279 0028 BA68     		ldr	r2, [r7, #8]
+ 280 002a 1A60     		str	r2, [r3]
+ 191:.\Generated_Source\PSoC4/IDAC_1.c **** 
+ 192:.\Generated_Source\PSoC4/IDAC_1.c ****     CyExitCriticalSection(enableInterrupts);
+ 281              		.loc 1 192 0
+ 282 002c 3B1C     		mov	r3, r7
+ 283 002e 0F33     		add	r3, r3, #15
+ 284 0030 1B78     		ldrb	r3, [r3]
+ 285 0032 181C     		mov	r0, r3
+ 286 0034 FFF7FEFF 		bl	CyExitCriticalSection
+ 193:.\Generated_Source\PSoC4/IDAC_1.c **** }
+ 287              		.loc 1 193 0
+ 288 0038 BD46     		mov	sp, r7
+ 289 003a 05B0     		add	sp, sp, #20
+ 290              		@ sp needed
+ 291 003c 90BD     		pop	{r4, r7, pc}
+ 292              	.L16:
+ 293 003e C046     		.align	2
+ 294              	.L15:
+ 295 0040 08000840 		.word	1074266120
+ 296              		.cfi_endproc
+ 297              	.LFE4:
+ 298              		.size	IDAC_1_SetValue, .-IDAC_1_SetValue
+ 299              		.text
+ 300              	.Letext0:
+ 301              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 302              		.section	.debug_info,"",%progbits
+ 303              	.Ldebug_info0:
+ 304 0000 79010000 		.4byte	0x179
+ 305 0004 0400     		.2byte	0x4
+ 306 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 307 000a 04       		.byte	0x4
+ 308 000b 01       		.uleb128 0x1
+ 309 000c B5000000 		.4byte	.LASF22
+ 310 0010 01       		.byte	0x1
+ 311 0011 45000000 		.4byte	.LASF23
+ 312 0015 51010000 		.4byte	.LASF24
+ 313 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 314 001d 00000000 		.4byte	0
+ 315 0021 00000000 		.4byte	.Ldebug_line0
+ 316 0025 02       		.uleb128 0x2
+ 317 0026 01       		.byte	0x1
+ 318 0027 06       		.byte	0x6
+ 319 0028 C1010000 		.4byte	.LASF0
+ 320 002c 02       		.uleb128 0x2
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 10
+
+
+ 321 002d 01       		.byte	0x1
+ 322 002e 08       		.byte	0x8
+ 323 002f 31010000 		.4byte	.LASF1
+ 324 0033 02       		.uleb128 0x2
+ 325 0034 02       		.byte	0x2
+ 326 0035 05       		.byte	0x5
+ 327 0036 DF010000 		.4byte	.LASF2
+ 328 003a 02       		.uleb128 0x2
+ 329 003b 02       		.byte	0x2
+ 330 003c 07       		.byte	0x7
+ 331 003d AE010000 		.4byte	.LASF3
+ 332 0041 02       		.uleb128 0x2
+ 333 0042 04       		.byte	0x4
+ 334 0043 05       		.byte	0x5
+ 335 0044 9F010000 		.4byte	.LASF4
+ 336 0048 02       		.uleb128 0x2
+ 337 0049 04       		.byte	0x4
+ 338 004a 07       		.byte	0x7
+ 339 004b 86010000 		.4byte	.LASF5
+ 340 004f 02       		.uleb128 0x2
+ 341 0050 08       		.byte	0x8
+ 342 0051 05       		.byte	0x5
+ 343 0052 00000000 		.4byte	.LASF6
+ 344 0056 02       		.uleb128 0x2
+ 345 0057 08       		.byte	0x8
+ 346 0058 07       		.byte	0x7
+ 347 0059 98000000 		.4byte	.LASF7
+ 348 005d 03       		.uleb128 0x3
+ 349 005e 04       		.byte	0x4
+ 350 005f 05       		.byte	0x5
+ 351 0060 696E7400 		.ascii	"int\000"
+ 352 0064 02       		.uleb128 0x2
+ 353 0065 04       		.byte	0x4
+ 354 0066 07       		.byte	0x7
+ 355 0067 E9010000 		.4byte	.LASF8
+ 356 006b 04       		.uleb128 0x4
+ 357 006c 78000000 		.4byte	.LASF9
+ 358 0070 02       		.byte	0x2
+ 359 0071 A1       		.byte	0xa1
+ 360 0072 2C000000 		.4byte	0x2c
+ 361 0076 04       		.uleb128 0x4
+ 362 0077 3E000000 		.4byte	.LASF10
+ 363 007b 02       		.byte	0x2
+ 364 007c A3       		.byte	0xa3
+ 365 007d 48000000 		.4byte	0x48
+ 366 0081 02       		.uleb128 0x2
+ 367 0082 04       		.byte	0x4
+ 368 0083 04       		.byte	0x4
+ 369 0084 AF000000 		.4byte	.LASF11
+ 370 0088 02       		.uleb128 0x2
+ 371 0089 08       		.byte	0x8
+ 372 008a 04       		.byte	0x4
+ 373 008b 98010000 		.4byte	.LASF12
+ 374 008f 02       		.uleb128 0x2
+ 375 0090 01       		.byte	0x1
+ 376 0091 08       		.byte	0x8
+ 377 0092 3F010000 		.4byte	.LASF13
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 11
+
+
+ 378 0096 05       		.uleb128 0x5
+ 379 0097 A8010000 		.4byte	.LASF14
+ 380 009b 02       		.byte	0x2
+ 381 009c 4D01     		.2byte	0x14d
+ 382 009e A2000000 		.4byte	0xa2
+ 383 00a2 06       		.uleb128 0x6
+ 384 00a3 76000000 		.4byte	0x76
+ 385 00a7 02       		.uleb128 0x2
+ 386 00a8 04       		.byte	0x4
+ 387 00a9 07       		.byte	0x7
+ 388 00aa F6010000 		.4byte	.LASF15
+ 389 00ae 07       		.uleb128 0x7
+ 390 00af CD010000 		.4byte	.LASF16
+ 391 00b3 01       		.byte	0x1
+ 392 00b4 25       		.byte	0x25
+ 393 00b5 00000000 		.4byte	.LFB0
+ 394 00b9 58000000 		.4byte	.LFE0-.LFB0
+ 395 00bd 01       		.uleb128 0x1
+ 396 00be 9C       		.byte	0x9c
+ 397 00bf D2000000 		.4byte	0xd2
+ 398 00c3 08       		.uleb128 0x8
+ 399 00c4 67000000 		.4byte	.LASF18
+ 400 00c8 01       		.byte	0x1
+ 401 00c9 27       		.byte	0x27
+ 402 00ca 6B000000 		.4byte	0x6b
+ 403 00ce 02       		.uleb128 0x2
+ 404 00cf 91       		.byte	0x91
+ 405 00d0 6F       		.sleb128 -17
+ 406 00d1 00       		.byte	0
+ 407 00d2 07       		.uleb128 0x7
+ 408 00d3 7E000000 		.4byte	.LASF17
+ 409 00d7 01       		.byte	0x1
+ 410 00d8 53       		.byte	0x53
+ 411 00d9 00000000 		.4byte	.LFB1
+ 412 00dd 44000000 		.4byte	.LFE1-.LFB1
+ 413 00e1 01       		.uleb128 0x1
+ 414 00e2 9C       		.byte	0x9c
+ 415 00e3 F6000000 		.4byte	0xf6
+ 416 00e7 08       		.uleb128 0x8
+ 417 00e8 67000000 		.4byte	.LASF18
+ 418 00ec 01       		.byte	0x1
+ 419 00ed 55       		.byte	0x55
+ 420 00ee 6B000000 		.4byte	0x6b
+ 421 00f2 02       		.uleb128 0x2
+ 422 00f3 91       		.byte	0x91
+ 423 00f4 6F       		.sleb128 -17
+ 424 00f5 00       		.byte	0
+ 425 00f6 09       		.uleb128 0x9
+ 426 00f7 44010000 		.4byte	.LASF25
+ 427 00fb 01       		.byte	0x1
+ 428 00fc 74       		.byte	0x74
+ 429 00fd 00000000 		.4byte	.LFB2
+ 430 0101 24000000 		.4byte	.LFE2-.LFB2
+ 431 0105 01       		.uleb128 0x1
+ 432 0106 9C       		.byte	0x9c
+ 433 0107 07       		.uleb128 0x7
+ 434 0108 8C000000 		.4byte	.LASF19
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 12
+
+
+ 435 010c 01       		.byte	0x1
+ 436 010d 92       		.byte	0x92
+ 437 010e 00000000 		.4byte	.LFB3
+ 438 0112 34000000 		.4byte	.LFE3-.LFB3
+ 439 0116 01       		.uleb128 0x1
+ 440 0117 9C       		.byte	0x9c
+ 441 0118 2B010000 		.4byte	0x12b
+ 442 011c 08       		.uleb128 0x8
+ 443 011d 67000000 		.4byte	.LASF18
+ 444 0121 01       		.byte	0x1
+ 445 0122 94       		.byte	0x94
+ 446 0123 6B000000 		.4byte	0x6b
+ 447 0127 02       		.uleb128 0x2
+ 448 0128 91       		.byte	0x91
+ 449 0129 6F       		.sleb128 -17
+ 450 012a 00       		.byte	0
+ 451 012b 07       		.uleb128 0x7
+ 452 012c 1D000000 		.4byte	.LASF20
+ 453 0130 01       		.byte	0x1
+ 454 0131 B0       		.byte	0xb0
+ 455 0132 00000000 		.4byte	.LFB4
+ 456 0136 44000000 		.4byte	.LFE4-.LFB4
+ 457 013a 01       		.uleb128 0x1
+ 458 013b 9C       		.byte	0x9c
+ 459 013c 6B010000 		.4byte	0x16b
+ 460 0140 0A       		.uleb128 0xa
+ 461 0141 D9010000 		.4byte	.LASF26
+ 462 0145 01       		.byte	0x1
+ 463 0146 B0       		.byte	0xb0
+ 464 0147 76000000 		.4byte	0x76
+ 465 014b 02       		.uleb128 0x2
+ 466 014c 91       		.byte	0x91
+ 467 014d 64       		.sleb128 -28
+ 468 014e 08       		.uleb128 0x8
+ 469 014f 67000000 		.4byte	.LASF18
+ 470 0153 01       		.byte	0x1
+ 471 0154 B2       		.byte	0xb2
+ 472 0155 6B000000 		.4byte	0x6b
+ 473 0159 02       		.uleb128 0x2
+ 474 015a 91       		.byte	0x91
+ 475 015b 6F       		.sleb128 -17
+ 476 015c 08       		.uleb128 0x8
+ 477 015d 2D000000 		.4byte	.LASF21
+ 478 0161 01       		.byte	0x1
+ 479 0162 B3       		.byte	0xb3
+ 480 0163 76000000 		.4byte	0x76
+ 481 0167 02       		.uleb128 0x2
+ 482 0168 91       		.byte	0x91
+ 483 0169 68       		.sleb128 -24
+ 484 016a 00       		.byte	0
+ 485 016b 0B       		.uleb128 0xb
+ 486 016c 0E000000 		.4byte	.LASF27
+ 487 0170 01       		.byte	0x1
+ 488 0171 11       		.byte	0x11
+ 489 0172 76000000 		.4byte	0x76
+ 490 0176 05       		.uleb128 0x5
+ 491 0177 03       		.byte	0x3
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 13
+
+
+ 492 0178 00000000 		.4byte	IDAC_1_initVar
+ 493 017c 00       		.byte	0
+ 494              		.section	.debug_abbrev,"",%progbits
+ 495              	.Ldebug_abbrev0:
+ 496 0000 01       		.uleb128 0x1
+ 497 0001 11       		.uleb128 0x11
+ 498 0002 01       		.byte	0x1
+ 499 0003 25       		.uleb128 0x25
+ 500 0004 0E       		.uleb128 0xe
+ 501 0005 13       		.uleb128 0x13
+ 502 0006 0B       		.uleb128 0xb
+ 503 0007 03       		.uleb128 0x3
+ 504 0008 0E       		.uleb128 0xe
+ 505 0009 1B       		.uleb128 0x1b
+ 506 000a 0E       		.uleb128 0xe
+ 507 000b 55       		.uleb128 0x55
+ 508 000c 17       		.uleb128 0x17
+ 509 000d 11       		.uleb128 0x11
+ 510 000e 01       		.uleb128 0x1
+ 511 000f 10       		.uleb128 0x10
+ 512 0010 17       		.uleb128 0x17
+ 513 0011 00       		.byte	0
+ 514 0012 00       		.byte	0
+ 515 0013 02       		.uleb128 0x2
+ 516 0014 24       		.uleb128 0x24
+ 517 0015 00       		.byte	0
+ 518 0016 0B       		.uleb128 0xb
+ 519 0017 0B       		.uleb128 0xb
+ 520 0018 3E       		.uleb128 0x3e
+ 521 0019 0B       		.uleb128 0xb
+ 522 001a 03       		.uleb128 0x3
+ 523 001b 0E       		.uleb128 0xe
+ 524 001c 00       		.byte	0
+ 525 001d 00       		.byte	0
+ 526 001e 03       		.uleb128 0x3
+ 527 001f 24       		.uleb128 0x24
+ 528 0020 00       		.byte	0
+ 529 0021 0B       		.uleb128 0xb
+ 530 0022 0B       		.uleb128 0xb
+ 531 0023 3E       		.uleb128 0x3e
+ 532 0024 0B       		.uleb128 0xb
+ 533 0025 03       		.uleb128 0x3
+ 534 0026 08       		.uleb128 0x8
+ 535 0027 00       		.byte	0
+ 536 0028 00       		.byte	0
+ 537 0029 04       		.uleb128 0x4
+ 538 002a 16       		.uleb128 0x16
+ 539 002b 00       		.byte	0
+ 540 002c 03       		.uleb128 0x3
+ 541 002d 0E       		.uleb128 0xe
+ 542 002e 3A       		.uleb128 0x3a
+ 543 002f 0B       		.uleb128 0xb
+ 544 0030 3B       		.uleb128 0x3b
+ 545 0031 0B       		.uleb128 0xb
+ 546 0032 49       		.uleb128 0x49
+ 547 0033 13       		.uleb128 0x13
+ 548 0034 00       		.byte	0
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 14
+
+
+ 549 0035 00       		.byte	0
+ 550 0036 05       		.uleb128 0x5
+ 551 0037 16       		.uleb128 0x16
+ 552 0038 00       		.byte	0
+ 553 0039 03       		.uleb128 0x3
+ 554 003a 0E       		.uleb128 0xe
+ 555 003b 3A       		.uleb128 0x3a
+ 556 003c 0B       		.uleb128 0xb
+ 557 003d 3B       		.uleb128 0x3b
+ 558 003e 05       		.uleb128 0x5
+ 559 003f 49       		.uleb128 0x49
+ 560 0040 13       		.uleb128 0x13
+ 561 0041 00       		.byte	0
+ 562 0042 00       		.byte	0
+ 563 0043 06       		.uleb128 0x6
+ 564 0044 35       		.uleb128 0x35
+ 565 0045 00       		.byte	0
+ 566 0046 49       		.uleb128 0x49
+ 567 0047 13       		.uleb128 0x13
+ 568 0048 00       		.byte	0
+ 569 0049 00       		.byte	0
+ 570 004a 07       		.uleb128 0x7
+ 571 004b 2E       		.uleb128 0x2e
+ 572 004c 01       		.byte	0x1
+ 573 004d 3F       		.uleb128 0x3f
+ 574 004e 19       		.uleb128 0x19
+ 575 004f 03       		.uleb128 0x3
+ 576 0050 0E       		.uleb128 0xe
+ 577 0051 3A       		.uleb128 0x3a
+ 578 0052 0B       		.uleb128 0xb
+ 579 0053 3B       		.uleb128 0x3b
+ 580 0054 0B       		.uleb128 0xb
+ 581 0055 27       		.uleb128 0x27
+ 582 0056 19       		.uleb128 0x19
+ 583 0057 11       		.uleb128 0x11
+ 584 0058 01       		.uleb128 0x1
+ 585 0059 12       		.uleb128 0x12
+ 586 005a 06       		.uleb128 0x6
+ 587 005b 40       		.uleb128 0x40
+ 588 005c 18       		.uleb128 0x18
+ 589 005d 9642     		.uleb128 0x2116
+ 590 005f 19       		.uleb128 0x19
+ 591 0060 01       		.uleb128 0x1
+ 592 0061 13       		.uleb128 0x13
+ 593 0062 00       		.byte	0
+ 594 0063 00       		.byte	0
+ 595 0064 08       		.uleb128 0x8
+ 596 0065 34       		.uleb128 0x34
+ 597 0066 00       		.byte	0
+ 598 0067 03       		.uleb128 0x3
+ 599 0068 0E       		.uleb128 0xe
+ 600 0069 3A       		.uleb128 0x3a
+ 601 006a 0B       		.uleb128 0xb
+ 602 006b 3B       		.uleb128 0x3b
+ 603 006c 0B       		.uleb128 0xb
+ 604 006d 49       		.uleb128 0x49
+ 605 006e 13       		.uleb128 0x13
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 15
+
+
+ 606 006f 02       		.uleb128 0x2
+ 607 0070 18       		.uleb128 0x18
+ 608 0071 00       		.byte	0
+ 609 0072 00       		.byte	0
+ 610 0073 09       		.uleb128 0x9
+ 611 0074 2E       		.uleb128 0x2e
+ 612 0075 00       		.byte	0
+ 613 0076 3F       		.uleb128 0x3f
+ 614 0077 19       		.uleb128 0x19
+ 615 0078 03       		.uleb128 0x3
+ 616 0079 0E       		.uleb128 0xe
+ 617 007a 3A       		.uleb128 0x3a
+ 618 007b 0B       		.uleb128 0xb
+ 619 007c 3B       		.uleb128 0x3b
+ 620 007d 0B       		.uleb128 0xb
+ 621 007e 27       		.uleb128 0x27
+ 622 007f 19       		.uleb128 0x19
+ 623 0080 11       		.uleb128 0x11
+ 624 0081 01       		.uleb128 0x1
+ 625 0082 12       		.uleb128 0x12
+ 626 0083 06       		.uleb128 0x6
+ 627 0084 40       		.uleb128 0x40
+ 628 0085 18       		.uleb128 0x18
+ 629 0086 9642     		.uleb128 0x2116
+ 630 0088 19       		.uleb128 0x19
+ 631 0089 00       		.byte	0
+ 632 008a 00       		.byte	0
+ 633 008b 0A       		.uleb128 0xa
+ 634 008c 05       		.uleb128 0x5
+ 635 008d 00       		.byte	0
+ 636 008e 03       		.uleb128 0x3
+ 637 008f 0E       		.uleb128 0xe
+ 638 0090 3A       		.uleb128 0x3a
+ 639 0091 0B       		.uleb128 0xb
+ 640 0092 3B       		.uleb128 0x3b
+ 641 0093 0B       		.uleb128 0xb
+ 642 0094 49       		.uleb128 0x49
+ 643 0095 13       		.uleb128 0x13
+ 644 0096 02       		.uleb128 0x2
+ 645 0097 18       		.uleb128 0x18
+ 646 0098 00       		.byte	0
+ 647 0099 00       		.byte	0
+ 648 009a 0B       		.uleb128 0xb
+ 649 009b 34       		.uleb128 0x34
+ 650 009c 00       		.byte	0
+ 651 009d 03       		.uleb128 0x3
+ 652 009e 0E       		.uleb128 0xe
+ 653 009f 3A       		.uleb128 0x3a
+ 654 00a0 0B       		.uleb128 0xb
+ 655 00a1 3B       		.uleb128 0x3b
+ 656 00a2 0B       		.uleb128 0xb
+ 657 00a3 49       		.uleb128 0x49
+ 658 00a4 13       		.uleb128 0x13
+ 659 00a5 3F       		.uleb128 0x3f
+ 660 00a6 19       		.uleb128 0x19
+ 661 00a7 02       		.uleb128 0x2
+ 662 00a8 18       		.uleb128 0x18
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 16
+
+
+ 663 00a9 00       		.byte	0
+ 664 00aa 00       		.byte	0
+ 665 00ab 00       		.byte	0
+ 666              		.section	.debug_aranges,"",%progbits
+ 667 0000 3C000000 		.4byte	0x3c
+ 668 0004 0200     		.2byte	0x2
+ 669 0006 00000000 		.4byte	.Ldebug_info0
+ 670 000a 04       		.byte	0x4
+ 671 000b 00       		.byte	0
+ 672 000c 0000     		.2byte	0
+ 673 000e 0000     		.2byte	0
+ 674 0010 00000000 		.4byte	.LFB0
+ 675 0014 58000000 		.4byte	.LFE0-.LFB0
+ 676 0018 00000000 		.4byte	.LFB1
+ 677 001c 44000000 		.4byte	.LFE1-.LFB1
+ 678 0020 00000000 		.4byte	.LFB2
+ 679 0024 24000000 		.4byte	.LFE2-.LFB2
+ 680 0028 00000000 		.4byte	.LFB3
+ 681 002c 34000000 		.4byte	.LFE3-.LFB3
+ 682 0030 00000000 		.4byte	.LFB4
+ 683 0034 44000000 		.4byte	.LFE4-.LFB4
+ 684 0038 00000000 		.4byte	0
+ 685 003c 00000000 		.4byte	0
+ 686              		.section	.debug_ranges,"",%progbits
+ 687              	.Ldebug_ranges0:
+ 688 0000 00000000 		.4byte	.LFB0
+ 689 0004 58000000 		.4byte	.LFE0
+ 690 0008 00000000 		.4byte	.LFB1
+ 691 000c 44000000 		.4byte	.LFE1
+ 692 0010 00000000 		.4byte	.LFB2
+ 693 0014 24000000 		.4byte	.LFE2
+ 694 0018 00000000 		.4byte	.LFB3
+ 695 001c 34000000 		.4byte	.LFE3
+ 696 0020 00000000 		.4byte	.LFB4
+ 697 0024 44000000 		.4byte	.LFE4
+ 698 0028 00000000 		.4byte	0
+ 699 002c 00000000 		.4byte	0
+ 700              		.section	.debug_line,"",%progbits
+ 701              	.Ldebug_line0:
+ 702 0000 B4000000 		.section	.debug_str,"MS",%progbits,1
+ 702      02004500 
+ 702      00000201 
+ 702      FB0E0D00 
+ 702      01010101 
+ 703              	.LASF6:
+ 704 0000 6C6F6E67 		.ascii	"long long int\000"
+ 704      206C6F6E 
+ 704      6720696E 
+ 704      7400
+ 705              	.LASF27:
+ 706 000e 49444143 		.ascii	"IDAC_1_initVar\000"
+ 706      5F315F69 
+ 706      6E697456 
+ 706      617200
+ 707              	.LASF20:
+ 708 001d 49444143 		.ascii	"IDAC_1_SetValue\000"
+ 708      5F315F53 
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 17
+
+
+ 708      65745661 
+ 708      6C756500 
+ 709              	.LASF21:
+ 710 002d 6E657752 		.ascii	"newRegisterValue\000"
+ 710      65676973 
+ 710      74657256 
+ 710      616C7565 
+ 710      00
+ 711              	.LASF10:
+ 712 003e 75696E74 		.ascii	"uint32\000"
+ 712      333200
+ 713              	.LASF23:
+ 714 0045 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\IDAC_1.c\000"
+ 714      6E657261 
+ 714      7465645F 
+ 714      536F7572 
+ 714      63655C50 
+ 715              	.LASF18:
+ 716 0067 656E6162 		.ascii	"enableInterrupts\000"
+ 716      6C65496E 
+ 716      74657272 
+ 716      75707473 
+ 716      00
+ 717              	.LASF9:
+ 718 0078 75696E74 		.ascii	"uint8\000"
+ 718      3800
+ 719              	.LASF17:
+ 720 007e 49444143 		.ascii	"IDAC_1_Enable\000"
+ 720      5F315F45 
+ 720      6E61626C 
+ 720      6500
+ 721              	.LASF19:
+ 722 008c 49444143 		.ascii	"IDAC_1_Stop\000"
+ 722      5F315F53 
+ 722      746F7000 
+ 723              	.LASF7:
+ 724 0098 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 724      206C6F6E 
+ 724      6720756E 
+ 724      7369676E 
+ 724      65642069 
+ 725              	.LASF11:
+ 726 00af 666C6F61 		.ascii	"float\000"
+ 726      7400
+ 727              	.LASF22:
+ 728 00b5 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 728      4320342E 
+ 728      382E3420 
+ 728      32303134 
+ 728      30353236 
+ 729 00e8 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 729      20726576 
+ 729      6973696F 
+ 729      6E203231 
+ 729      31333538 
+ 730 011b 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 730      66756E63 
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 18
+
+
+ 730      74696F6E 
+ 730      2D736563 
+ 730      74696F6E 
+ 731              	.LASF1:
+ 732 0131 756E7369 		.ascii	"unsigned char\000"
+ 732      676E6564 
+ 732      20636861 
+ 732      7200
+ 733              	.LASF13:
+ 734 013f 63686172 		.ascii	"char\000"
+ 734      00
+ 735              	.LASF25:
+ 736 0144 49444143 		.ascii	"IDAC_1_Start\000"
+ 736      5F315F53 
+ 736      74617274 
+ 736      00
+ 737              	.LASF24:
+ 738 0151 433A5C55 		.ascii	"C:\\Users\\kmoe\\Documents\\GitHub\\I3GFV\\IDAC\\ID"
+ 738      73657273 
+ 738      5C6B6D6F 
+ 738      655C446F 
+ 738      63756D65 
+ 739 017d 41432E63 		.ascii	"AC.cydsn\000"
+ 739      7964736E 
+ 739      00
+ 740              	.LASF5:
+ 741 0186 6C6F6E67 		.ascii	"long unsigned int\000"
+ 741      20756E73 
+ 741      69676E65 
+ 741      6420696E 
+ 741      7400
+ 742              	.LASF12:
+ 743 0198 646F7562 		.ascii	"double\000"
+ 743      6C6500
+ 744              	.LASF4:
+ 745 019f 6C6F6E67 		.ascii	"long int\000"
+ 745      20696E74 
+ 745      00
+ 746              	.LASF14:
+ 747 01a8 72656733 		.ascii	"reg32\000"
+ 747      3200
+ 748              	.LASF3:
+ 749 01ae 73686F72 		.ascii	"short unsigned int\000"
+ 749      7420756E 
+ 749      7369676E 
+ 749      65642069 
+ 749      6E7400
+ 750              	.LASF0:
+ 751 01c1 7369676E 		.ascii	"signed char\000"
+ 751      65642063 
+ 751      68617200 
+ 752              	.LASF16:
+ 753 01cd 49444143 		.ascii	"IDAC_1_Init\000"
+ 753      5F315F49 
+ 753      6E697400 
+ 754              	.LASF26:
+ 755 01d9 76616C75 		.ascii	"value\000"
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccx92f5Y.s 			page 19
+
+
+ 755      6500
+ 756              	.LASF2:
+ 757 01df 73686F72 		.ascii	"short int\000"
+ 757      7420696E 
+ 757      7400
+ 758              	.LASF8:
+ 759 01e9 756E7369 		.ascii	"unsigned int\000"
+ 759      676E6564 
+ 759      20696E74 
+ 759      00
+ 760              	.LASF15:
+ 761 01f6 73697A65 		.ascii	"sizetype\000"
+ 761      74797065 
+ 761      00
+ 762              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

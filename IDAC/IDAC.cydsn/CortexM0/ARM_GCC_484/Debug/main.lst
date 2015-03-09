@@ -1,0 +1,454 @@
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccwAXeAF.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.main,"ax",%progbits
+  18              		.align	2
+  19              		.global	main
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	main, %function
+  23              	main:
+  24              	.LFB33:
+  25              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** 
+  14:.\main.c      **** int main()
+  15:.\main.c      **** {
+  26              		.loc 1 15 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 82B0     		sub	sp, sp, #8
+  33              		.cfi_def_cfa_offset 16
+  34 0004 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+  16:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  17:.\main.c      ****     char step = 1;
+  36              		.loc 1 17 0
+  37 0006 FB1D     		add	r3, r7, #7
+  38 0008 0122     		mov	r2, #1
+  39 000a 1A70     		strb	r2, [r3]
+  18:.\main.c      ****     char value = 0;
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccwAXeAF.s 			page 2
+
+
+  40              		.loc 1 18 0
+  41 000c BB1D     		add	r3, r7, #6
+  42 000e 0022     		mov	r2, #0
+  43 0010 1A70     		strb	r2, [r3]
+  19:.\main.c      ****     int sleep = 1;
+  44              		.loc 1 19 0
+  45 0012 0123     		mov	r3, #1
+  46 0014 3B60     		str	r3, [r7]
+  20:.\main.c      ****     /* CyGlobalIntEnable; */ /* Uncomment this line to enable global interrupts. */
+  21:.\main.c      ****     IDAC_1_Start();
+  47              		.loc 1 21 0
+  48 0016 FFF7FEFF 		bl	IDAC_1_Start
+  49              	.L4:
+  22:.\main.c      ****     for(;;)
+  23:.\main.c      ****     {
+  24:.\main.c      ****         /* Place your application code here. */
+  25:.\main.c      ****         value += step;
+  50              		.loc 1 25 0
+  51 001a BB1D     		add	r3, r7, #6
+  52 001c B91D     		add	r1, r7, #6
+  53 001e FA1D     		add	r2, r7, #7
+  54 0020 0978     		ldrb	r1, [r1]
+  55 0022 1278     		ldrb	r2, [r2]
+  56 0024 8A18     		add	r2, r1, r2
+  57 0026 1A70     		strb	r2, [r3]
+  26:.\main.c      ****         if ((value == 200) || (value == 0)) {
+  58              		.loc 1 26 0
+  59 0028 BB1D     		add	r3, r7, #6
+  60 002a 1B78     		ldrb	r3, [r3]
+  61 002c C82B     		cmp	r3, #200
+  62 002e 03D0     		beq	.L2
+  63              		.loc 1 26 0 is_stmt 0 discriminator 1
+  64 0030 BB1D     		add	r3, r7, #6
+  65 0032 1B78     		ldrb	r3, [r3]
+  66 0034 002B     		cmp	r3, #0
+  67 0036 04D1     		bne	.L3
+  68              	.L2:
+  27:.\main.c      ****             step = -step;
+  69              		.loc 1 27 0 is_stmt 1
+  70 0038 FB1D     		add	r3, r7, #7
+  71 003a FA1D     		add	r2, r7, #7
+  72 003c 1278     		ldrb	r2, [r2]
+  73 003e 5242     		neg	r2, r2
+  74 0040 1A70     		strb	r2, [r3]
+  75              	.L3:
+  28:.\main.c      ****         }
+  29:.\main.c      ****         IDAC_1_SetValue(value);
+  76              		.loc 1 29 0
+  77 0042 BB1D     		add	r3, r7, #6
+  78 0044 1B78     		ldrb	r3, [r3]
+  79 0046 181C     		mov	r0, r3
+  80 0048 FFF7FEFF 		bl	IDAC_1_SetValue
+  30:.\main.c      ****         //CyDelay(sleep);
+  31:.\main.c      ****     }
+  81              		.loc 1 31 0
+  82 004c E5E7     		b	.L4
+  83              		.cfi_endproc
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccwAXeAF.s 			page 3
+
+
+  84              	.LFE33:
+  85              		.size	main, .-main
+  86 004e C046     		.text
+  87              	.Letext0:
+  88              		.section	.debug_info,"",%progbits
+  89              	.Ldebug_info0:
+  90 0000 C4000000 		.4byte	0xc4
+  91 0004 0400     		.2byte	0x4
+  92 0006 00000000 		.4byte	.Ldebug_abbrev0
+  93 000a 04       		.byte	0x4
+  94 000b 01       		.uleb128 0x1
+  95 000c 4F000000 		.4byte	.LASF16
+  96 0010 01       		.byte	0x1
+  97 0011 5D010000 		.4byte	.LASF17
+  98 0015 ED000000 		.4byte	.LASF18
+  99 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 100 001d 00000000 		.4byte	0
+ 101 0021 00000000 		.4byte	.Ldebug_line0
+ 102 0025 02       		.uleb128 0x2
+ 103 0026 01       		.byte	0x1
+ 104 0027 06       		.byte	0x6
+ 105 0028 4B010000 		.4byte	.LASF0
+ 106 002c 02       		.uleb128 0x2
+ 107 002d 01       		.byte	0x1
+ 108 002e 08       		.byte	0x8
+ 109 002f CB000000 		.4byte	.LASF1
+ 110 0033 02       		.uleb128 0x2
+ 111 0034 02       		.byte	0x2
+ 112 0035 05       		.byte	0x5
+ 113 0036 22010000 		.4byte	.LASF2
+ 114 003a 02       		.uleb128 0x2
+ 115 003b 02       		.byte	0x2
+ 116 003c 07       		.byte	0x7
+ 117 003d 38010000 		.4byte	.LASF3
+ 118 0041 02       		.uleb128 0x2
+ 119 0042 04       		.byte	0x4
+ 120 0043 05       		.byte	0x5
+ 121 0044 E4000000 		.4byte	.LASF4
+ 122 0048 02       		.uleb128 0x2
+ 123 0049 04       		.byte	0x4
+ 124 004a 07       		.byte	0x7
+ 125 004b 20000000 		.4byte	.LASF5
+ 126 004f 02       		.uleb128 0x2
+ 127 0050 08       		.byte	0x8
+ 128 0051 05       		.byte	0x5
+ 129 0052 00000000 		.4byte	.LASF6
+ 130 0056 02       		.uleb128 0x2
+ 131 0057 08       		.byte	0x8
+ 132 0058 07       		.byte	0x7
+ 133 0059 32000000 		.4byte	.LASF7
+ 134 005d 03       		.uleb128 0x3
+ 135 005e 04       		.byte	0x4
+ 136 005f 05       		.byte	0x5
+ 137 0060 696E7400 		.ascii	"int\000"
+ 138 0064 02       		.uleb128 0x2
+ 139 0065 04       		.byte	0x4
+ 140 0066 07       		.byte	0x7
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccwAXeAF.s 			page 4
+
+
+ 141 0067 0E000000 		.4byte	.LASF8
+ 142 006b 02       		.uleb128 0x2
+ 143 006c 04       		.byte	0x4
+ 144 006d 04       		.byte	0x4
+ 145 006e 49000000 		.4byte	.LASF9
+ 146 0072 02       		.uleb128 0x2
+ 147 0073 08       		.byte	0x8
+ 148 0074 04       		.byte	0x4
+ 149 0075 2C010000 		.4byte	.LASF10
+ 150 0079 02       		.uleb128 0x2
+ 151 007a 01       		.byte	0x1
+ 152 007b 08       		.byte	0x8
+ 153 007c D9000000 		.4byte	.LASF11
+ 154 0080 02       		.uleb128 0x2
+ 155 0081 04       		.byte	0x4
+ 156 0082 07       		.byte	0x7
+ 157 0083 66010000 		.4byte	.LASF12
+ 158 0087 04       		.uleb128 0x4
+ 159 0088 1B000000 		.4byte	.LASF19
+ 160 008c 01       		.byte	0x1
+ 161 008d 0E       		.byte	0xe
+ 162 008e 5D000000 		.4byte	0x5d
+ 163 0092 00000000 		.4byte	.LFB33
+ 164 0096 4E000000 		.4byte	.LFE33-.LFB33
+ 165 009a 01       		.uleb128 0x1
+ 166 009b 9C       		.byte	0x9c
+ 167 009c 05       		.uleb128 0x5
+ 168 009d 33010000 		.4byte	.LASF13
+ 169 00a1 01       		.byte	0x1
+ 170 00a2 11       		.byte	0x11
+ 171 00a3 79000000 		.4byte	0x79
+ 172 00a7 02       		.uleb128 0x2
+ 173 00a8 91       		.byte	0x91
+ 174 00a9 77       		.sleb128 -9
+ 175 00aa 05       		.uleb128 0x5
+ 176 00ab 57010000 		.4byte	.LASF14
+ 177 00af 01       		.byte	0x1
+ 178 00b0 12       		.byte	0x12
+ 179 00b1 79000000 		.4byte	0x79
+ 180 00b5 02       		.uleb128 0x2
+ 181 00b6 91       		.byte	0x91
+ 182 00b7 76       		.sleb128 -10
+ 183 00b8 05       		.uleb128 0x5
+ 184 00b9 DE000000 		.4byte	.LASF15
+ 185 00bd 01       		.byte	0x1
+ 186 00be 13       		.byte	0x13
+ 187 00bf 5D000000 		.4byte	0x5d
+ 188 00c3 02       		.uleb128 0x2
+ 189 00c4 91       		.byte	0x91
+ 190 00c5 70       		.sleb128 -16
+ 191 00c6 00       		.byte	0
+ 192 00c7 00       		.byte	0
+ 193              		.section	.debug_abbrev,"",%progbits
+ 194              	.Ldebug_abbrev0:
+ 195 0000 01       		.uleb128 0x1
+ 196 0001 11       		.uleb128 0x11
+ 197 0002 01       		.byte	0x1
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccwAXeAF.s 			page 5
+
+
+ 198 0003 25       		.uleb128 0x25
+ 199 0004 0E       		.uleb128 0xe
+ 200 0005 13       		.uleb128 0x13
+ 201 0006 0B       		.uleb128 0xb
+ 202 0007 03       		.uleb128 0x3
+ 203 0008 0E       		.uleb128 0xe
+ 204 0009 1B       		.uleb128 0x1b
+ 205 000a 0E       		.uleb128 0xe
+ 206 000b 55       		.uleb128 0x55
+ 207 000c 17       		.uleb128 0x17
+ 208 000d 11       		.uleb128 0x11
+ 209 000e 01       		.uleb128 0x1
+ 210 000f 10       		.uleb128 0x10
+ 211 0010 17       		.uleb128 0x17
+ 212 0011 00       		.byte	0
+ 213 0012 00       		.byte	0
+ 214 0013 02       		.uleb128 0x2
+ 215 0014 24       		.uleb128 0x24
+ 216 0015 00       		.byte	0
+ 217 0016 0B       		.uleb128 0xb
+ 218 0017 0B       		.uleb128 0xb
+ 219 0018 3E       		.uleb128 0x3e
+ 220 0019 0B       		.uleb128 0xb
+ 221 001a 03       		.uleb128 0x3
+ 222 001b 0E       		.uleb128 0xe
+ 223 001c 00       		.byte	0
+ 224 001d 00       		.byte	0
+ 225 001e 03       		.uleb128 0x3
+ 226 001f 24       		.uleb128 0x24
+ 227 0020 00       		.byte	0
+ 228 0021 0B       		.uleb128 0xb
+ 229 0022 0B       		.uleb128 0xb
+ 230 0023 3E       		.uleb128 0x3e
+ 231 0024 0B       		.uleb128 0xb
+ 232 0025 03       		.uleb128 0x3
+ 233 0026 08       		.uleb128 0x8
+ 234 0027 00       		.byte	0
+ 235 0028 00       		.byte	0
+ 236 0029 04       		.uleb128 0x4
+ 237 002a 2E       		.uleb128 0x2e
+ 238 002b 01       		.byte	0x1
+ 239 002c 3F       		.uleb128 0x3f
+ 240 002d 19       		.uleb128 0x19
+ 241 002e 03       		.uleb128 0x3
+ 242 002f 0E       		.uleb128 0xe
+ 243 0030 3A       		.uleb128 0x3a
+ 244 0031 0B       		.uleb128 0xb
+ 245 0032 3B       		.uleb128 0x3b
+ 246 0033 0B       		.uleb128 0xb
+ 247 0034 49       		.uleb128 0x49
+ 248 0035 13       		.uleb128 0x13
+ 249 0036 11       		.uleb128 0x11
+ 250 0037 01       		.uleb128 0x1
+ 251 0038 12       		.uleb128 0x12
+ 252 0039 06       		.uleb128 0x6
+ 253 003a 40       		.uleb128 0x40
+ 254 003b 18       		.uleb128 0x18
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccwAXeAF.s 			page 6
+
+
+ 255 003c 9642     		.uleb128 0x2116
+ 256 003e 19       		.uleb128 0x19
+ 257 003f 00       		.byte	0
+ 258 0040 00       		.byte	0
+ 259 0041 05       		.uleb128 0x5
+ 260 0042 34       		.uleb128 0x34
+ 261 0043 00       		.byte	0
+ 262 0044 03       		.uleb128 0x3
+ 263 0045 0E       		.uleb128 0xe
+ 264 0046 3A       		.uleb128 0x3a
+ 265 0047 0B       		.uleb128 0xb
+ 266 0048 3B       		.uleb128 0x3b
+ 267 0049 0B       		.uleb128 0xb
+ 268 004a 49       		.uleb128 0x49
+ 269 004b 13       		.uleb128 0x13
+ 270 004c 02       		.uleb128 0x2
+ 271 004d 18       		.uleb128 0x18
+ 272 004e 00       		.byte	0
+ 273 004f 00       		.byte	0
+ 274 0050 00       		.byte	0
+ 275              		.section	.debug_aranges,"",%progbits
+ 276 0000 1C000000 		.4byte	0x1c
+ 277 0004 0200     		.2byte	0x2
+ 278 0006 00000000 		.4byte	.Ldebug_info0
+ 279 000a 04       		.byte	0x4
+ 280 000b 00       		.byte	0
+ 281 000c 0000     		.2byte	0
+ 282 000e 0000     		.2byte	0
+ 283 0010 00000000 		.4byte	.LFB33
+ 284 0014 4E000000 		.4byte	.LFE33-.LFB33
+ 285 0018 00000000 		.4byte	0
+ 286 001c 00000000 		.4byte	0
+ 287              		.section	.debug_ranges,"",%progbits
+ 288              	.Ldebug_ranges0:
+ 289 0000 00000000 		.4byte	.LFB33
+ 290 0004 4E000000 		.4byte	.LFE33
+ 291 0008 00000000 		.4byte	0
+ 292 000c 00000000 		.4byte	0
+ 293              		.section	.debug_line,"",%progbits
+ 294              	.Ldebug_line0:
+ 295 0000 44000000 		.section	.debug_str,"MS",%progbits,1
+ 295      02001F00 
+ 295      00000201 
+ 295      FB0E0D00 
+ 295      01010101 
+ 296              	.LASF6:
+ 297 0000 6C6F6E67 		.ascii	"long long int\000"
+ 297      206C6F6E 
+ 297      6720696E 
+ 297      7400
+ 298              	.LASF8:
+ 299 000e 756E7369 		.ascii	"unsigned int\000"
+ 299      676E6564 
+ 299      20696E74 
+ 299      00
+ 300              	.LASF19:
+ 301 001b 6D61696E 		.ascii	"main\000"
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccwAXeAF.s 			page 7
+
+
+ 301      00
+ 302              	.LASF5:
+ 303 0020 6C6F6E67 		.ascii	"long unsigned int\000"
+ 303      20756E73 
+ 303      69676E65 
+ 303      6420696E 
+ 303      7400
+ 304              	.LASF7:
+ 305 0032 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 305      206C6F6E 
+ 305      6720756E 
+ 305      7369676E 
+ 305      65642069 
+ 306              	.LASF9:
+ 307 0049 666C6F61 		.ascii	"float\000"
+ 307      7400
+ 308              	.LASF16:
+ 309 004f 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 309      4320342E 
+ 309      382E3420 
+ 309      32303134 
+ 309      30353236 
+ 310 0082 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 310      20726576 
+ 310      6973696F 
+ 310      6E203231 
+ 310      31333538 
+ 311 00b5 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 311      66756E63 
+ 311      74696F6E 
+ 311      2D736563 
+ 311      74696F6E 
+ 312              	.LASF1:
+ 313 00cb 756E7369 		.ascii	"unsigned char\000"
+ 313      676E6564 
+ 313      20636861 
+ 313      7200
+ 314              	.LASF11:
+ 315 00d9 63686172 		.ascii	"char\000"
+ 315      00
+ 316              	.LASF15:
+ 317 00de 736C6565 		.ascii	"sleep\000"
+ 317      7000
+ 318              	.LASF4:
+ 319 00e4 6C6F6E67 		.ascii	"long int\000"
+ 319      20696E74 
+ 319      00
+ 320              	.LASF18:
+ 321 00ed 433A5C55 		.ascii	"C:\\Users\\kmoe\\Documents\\GitHub\\I3GFV\\IDAC\\ID"
+ 321      73657273 
+ 321      5C6B6D6F 
+ 321      655C446F 
+ 321      63756D65 
+ 322 0119 41432E63 		.ascii	"AC.cydsn\000"
+ 322      7964736E 
+ 322      00
+ 323              	.LASF2:
+ARM GAS  C:\Users\kmoe\AppData\Local\Temp\ccwAXeAF.s 			page 8
+
+
+ 324 0122 73686F72 		.ascii	"short int\000"
+ 324      7420696E 
+ 324      7400
+ 325              	.LASF10:
+ 326 012c 646F7562 		.ascii	"double\000"
+ 326      6C6500
+ 327              	.LASF13:
+ 328 0133 73746570 		.ascii	"step\000"
+ 328      00
+ 329              	.LASF3:
+ 330 0138 73686F72 		.ascii	"short unsigned int\000"
+ 330      7420756E 
+ 330      7369676E 
+ 330      65642069 
+ 330      6E7400
+ 331              	.LASF0:
+ 332 014b 7369676E 		.ascii	"signed char\000"
+ 332      65642063 
+ 332      68617200 
+ 333              	.LASF14:
+ 334 0157 76616C75 		.ascii	"value\000"
+ 334      6500
+ 335              	.LASF17:
+ 336 015d 2E5C6D61 		.ascii	".\\main.c\000"
+ 336      696E2E63 
+ 336      00
+ 337              	.LASF12:
+ 338 0166 73697A65 		.ascii	"sizetype\000"
+ 338      74797065 
+ 338      00
+ 339              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

@@ -1,0 +1,18 @@
+C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/CortexM0/ARM_GCC_484/Debug/IDAC_1.o : C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/IDAC_1.h C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/IDAC_1.c 
+
+C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/IDAC_1.h : 
+
+C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/IDAC_1.c : 
+
+C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/CortexM0/ARM_GCC_484/Debug/IDAC_1_PM.o : C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/IDAC_1.h C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/IDAC_1_PM.c 
+
+C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/IDAC_1_PM.c : 
+
