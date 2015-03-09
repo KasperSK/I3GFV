@@ -1,8 +1,0 @@
-C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/CortexM0/ARM_GCC_484/Debug/CyBootAsmGnu.o : C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cyfittergnu.inc C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s 
-
-C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cydevicegnu_trm.inc : 
-
-C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/cyfittergnu.inc : 
-
-C:/Users/kmoe/Documents/GitHub/I3GFV/IDAC/IDAC.cydsn/Generated_Source/PSoC4/CyBootAsmGnu.s : 
-
