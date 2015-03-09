@@ -1,0 +1,9 @@
+*.cywrk*
+*.cydsn/*
+!*.cydsn/device.h
+!*.cydsn/main.c
+!*.cydsn/*.cydwr
+!*.cydsn/*.cyprj
+!*.cydsn/TopDesign
+*.cydsn/TopDesign/*
+!*.cydsn/TopDesign/*.cysch
