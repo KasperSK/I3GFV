@@ -13,15 +13,22 @@
 #include <stdio.h>
 
 #define NO_FINGER 0xFF
-#define DEBUGUSR 5
+#define PWN_SIGNAL_MAX 1024
 
 int main()
 {
-    uint8 sliderposition= NO_FINGER;
+    uint16 pwm_signal = 0;
+    int16 diffposition = 0;
+    uint8 sliderposition = NO_FINGER;
     uint8 lastposition = NO_FINGER;
     uint8 mode = 0;
-    char Debug[50];
-    
+    uint8 rotation = 1;
+    uint8 lastrotation = 1;
+    #ifdef DEBUG
+    char debug_msg[50];
+    uint16 last_pwm_signal;
+    #endif
+        
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     CyGlobalIntEnable;  /* Uncomment this line to enable global interrupts. */
     PWM_BI_Start();
@@ -29,11 +36,12 @@ int main()
     CapSense_Start();
     CapSense_InitializeAllBaselines();
     UART_Start();
-
-    #ifdef DEBUGUSR
-    sprintf(Debug, "Starting this program\r\n");
-    UART_PutString(Debug);
+    #ifdef DEBUG
+    sprintf(debug_msg, "Starting this program\r\n");
+    UART_UartPutString(debug_msg);
     #endif
+    Pin_CCW_Write(!rotation);
+    Pin_CW_Write(rotation);
     for(;;)
     {
         CapSense_UpdateEnabledBaselines();
@@ -42,35 +50,58 @@ int main()
         sliderposition = CapSense_GetCentroidPos(CapSense_LINEARSLIDER0__LS);
         if(sliderposition != NO_FINGER)
         {
-            if(lastposition != sliderposition)
+            if(mode == 1)
             {
-                lastposition = sliderposition;   
-                if(mode == 0)
+                rotation = (sliderposition < 100 ? 1 : 0);
+                if ( rotation != lastrotation)
                 {
-                    PWM_BI_WriteCompare(lastposition);
-
+                    Pin_CW_Write(rotation);
+                    Pin_CCW_Write(!rotation);
+                    #ifdef DEBUG
+                    sprintf(debug_msg, "Going: %d\r\n", rotation);
+                    UART_UartPutString(debug_msg);
+                    #endif
                 }
-                if(mode == 1)
-                {
-                    if(sliderposition < 100)
-                    {
-                        Pin_CCW_Write(0);
-                        Pin_CW_Write(1);
-                    }
-                    if(sliderposition > 140)
-                    {
-                        Pin_CW_Write(0);
-                        Pin_CCW_Write(1);
-                    }
-                }
+                lastrotation = rotation;
             }
+            
+            if(mode == 0)
+            {  
+                if (lastposition != NO_FINGER) {
+                    diffposition = sliderposition - lastposition;
+                    if (-diffposition > pwm_signal) {
+                        pwm_signal = 0;
+                    } else if ( diffposition + pwm_signal > PWN_SIGNAL_MAX) {
+                        pwm_signal = PWN_SIGNAL_MAX;
+                    } else {
+                        pwm_signal += diffposition;
+                    }
+                }
+                PWM_BI_WriteCompare(pwm_signal);
+                
+            }
+            
+            #ifdef DEBUG
+            if (pwm_signal != last_pwm_signal)
+            {
+                last_pwm_signal = pwm_signal;
+                sprintf(debug_msg, "Sliderpostion: %d\r\n", pwm_signal);
+                UART_UartPutString(debug_msg);
+            }
+            #endif
         }
+        lastposition = sliderposition;
         if(!Pin_PB_Read())
         {
             while(!Pin_PB_Read());
             mode = !mode;
+            #ifdef DEBUG
+            sprintf(debug_msg, "Going to mode: %d\r\n", mode);
+            UART_UartPutString(debug_msg);
+            #endif
         }
     }
+    return 0;
 }
 
 /* [] END OF FILE */

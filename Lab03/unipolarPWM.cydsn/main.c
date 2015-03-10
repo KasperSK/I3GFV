@@ -13,14 +13,20 @@
 #include <stdio.h>
 
 #define NO_FINGER 0xFF
-#define DEBUG
+#define PWN_SIGNAL_MAX 1024
+//#undef DEBUG
 
 int main()
 {
-    uint8 sliderposition= NO_FINGER;
+    uint16 pwm_signal = 0;
+    int16 diffposition = 0;
+    uint8 sliderposition = NO_FINGER;
     uint8 lastposition = NO_FINGER;
     
-    char Debug[50];
+    #ifdef DEBUG
+    char DebugStr[50];
+    uint16 last_pwm_signal = 0;
+    #endif
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     CyGlobalIntEnable; /* Uncomment this line to enable global interrupts. */
     PWM_UNI_Start();
@@ -31,10 +37,10 @@ int main()
     
     
     #ifdef DEBUG
-    sprintf(Debug, "Starting this program\r\n");
-    UART_PutString(Debug);
+    sprintf(DebugStr, "Starting this program\r\n");
+    UART_UartPutString(DebugStr);
     #endif
-    
+    CapSense_UpdateEnabledBaselines();
     for(;;)
     {
         CapSense_UpdateEnabledBaselines();
@@ -42,20 +48,32 @@ int main()
         while(CapSense_IsBusy()){}
         sliderposition = CapSense_GetCentroidPos(CapSense_LINEARSLIDER0__LS);
         
-        if(sliderposition != NO_FINGER)
+        if(sliderposition != NO_FINGER && sliderposition != lastposition)
         {
-            lastposition = sliderposition;
-            if(sliderposition < 250)
-            {
-                PWM_UNI_WriteCompare(sliderposition);
+            if (lastposition != NO_FINGER) {
+                diffposition = sliderposition - lastposition;
+                if (-diffposition > pwm_signal) {
+                    pwm_signal = 0;
+                } else if ( diffposition + pwm_signal > PWN_SIGNAL_MAX) {
+                    pwm_signal = PWN_SIGNAL_MAX;
+                } else {
+                    pwm_signal += diffposition;
+                }
             }
+            lastposition = sliderposition;
+            PWM_UNI_WriteCompare(pwm_signal);
+        } else {
+            lastposition = NO_FINGER;
         }
         
-        #ifdef DEBUG 
-        sprintf(Debug, "Sliderpostion: %d\r\n", sliderposition);
-        UART_PutString(Debug);
+        #ifdef DEBUG
+        if (pwm_signal != last_pwm_signal)
+        {
+            last_pwm_signal = pwm_signal;
+            sprintf(DebugStr, "Sliderpostion: %d\r\n", pwm_signal);
+            UART_UartPutString(DebugStr);
+        }
         #endif
-        CyDelay(500);
     }
 }
 
